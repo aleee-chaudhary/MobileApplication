@@ -16,4 +16,6 @@
     <string name="phone_number">Phone Number</string>
     <string name="strong_password">Strong Password</string>
     <string name="terms_and_conditions">By checking the box, you agree to our Terms and Conditions.</string>
+    <string name="new_member">New Member?</string>
+    <string name="register_now">Register Now</string>
 </resources>
