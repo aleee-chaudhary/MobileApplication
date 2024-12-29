@@ -6,37 +6,58 @@ import org.junit.Test
 class CredentialsManagerTest {
 
     @Test
-    fun testIsEmailEmpty() {
+    fun givenValidEmail_thenReturnsTrue() {
         val credentialsManager = CredentialsManager()
-        val isEmailEmpty = credentialsManager.isEmailValid("")
-        assertEquals(false, isEmailEmpty)
-    }
-
-    @Test
-    fun testInvalidEmail() {
-        val credentialsManager = CredentialsManager()
-        val isEmailValid = credentialsManager.isEmailValid("invalid-email")
-        assertEquals(false, isEmailValid)
-    }
-
-    @Test
-    fun testIsEmailValid() {
-        val credentialsManager = CredentialsManager()
-        val isEmailValid = credentialsManager.isEmailValid("ul0280584@edu.uni.lodz.pl")
+        val isEmailValid = credentialsManager.isEmailValid("test@test.com")
         assertEquals(true, isEmailValid)
     }
 
     @Test
-    fun testIsPasswordEmpty() {
+    fun givenEmptyEmail_thenReturnsTrue() {
         val credentialsManager = CredentialsManager()
-        val isPasswordValid = credentialsManager.isPasswordValid("")
-        assertEquals(false, isPasswordValid)
+        val isEmailEmpty = credentialsManager.isEmailEmpty("")
+        assertEquals(true, isEmailEmpty)
     }
 
     @Test
-    fun testIsPasswordValid() {
+    fun givenValidEmail_thenReturnsFalse() {
         val credentialsManager = CredentialsManager()
-        val isPasswordValid = credentialsManager.isPasswordValid("Test123test")
-        assertEquals(true, isPasswordValid)
+        val isEmailEmpty = credentialsManager.isEmailEmpty("test.com")
+        assertEquals(false, isEmailEmpty)
+    }
+
+    @Test
+    fun givenEmptyEmail_thenReturnsFalse() {
+        val credentialsManager = CredentialsManager()
+        val isEmailValid = credentialsManager.isEmailValid("test.com")
+        assertEquals(false, isEmailValid)
+    }
+
+    @Test
+    fun givenPasswordEmpty_thenReturnsTrue() {
+        val credentialsManager = CredentialsManager()
+        val isPasswordEmpty = credentialsManager.isPasswordEmpty("")
+        assertEquals(true, isPasswordEmpty)
+    }
+
+    @Test
+    fun givenPasswordEmpty_thenReturnsFalse() {
+        val credentialsManager = CredentialsManager()
+        val isPasswordEmpty = credentialsManager.isPasswordEmpty("password")
+        assertEquals(false, isPasswordEmpty)
+    }
+
+    @Test
+    fun givenPasswordFilled_thenReturnsTrue() {
+        val credentialsManager = CredentialsManager()
+        val isPasswordFilled = credentialsManager.isPasswordFilled("password")
+        assertEquals(true, isPasswordFilled)
+    }
+
+    @Test
+    fun givenPasswordFilled_thenReturnsFalse() {
+        val credentialsManager = CredentialsManager()
+        val isPasswordFilled = credentialsManager.isPasswordFilled("")
+        assertEquals(false, isPasswordFilled)
     }
 }
