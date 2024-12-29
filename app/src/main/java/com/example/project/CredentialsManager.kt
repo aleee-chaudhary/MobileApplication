@@ -1,13 +1,22 @@
 package com.example.project
 
 class CredentialsManager {
-    fun isEmailValid(email: String): Boolean {
-        val emailRegex = Regex("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")
-        return emailRegex.matches(email)
 
+    private val email_pattern = ("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}").toRegex()
+
+    fun isEmailValid(email: String): Boolean {
+        return email.matches(email_pattern)
     }
 
-    fun isPasswordValid(password: String): Boolean {
+    fun isEmailEmpty(email: String): Boolean {
+        return email.isEmpty()
+    }
+
+    fun isPasswordFilled(password: String): Boolean {
         return password.isNotEmpty()
+    }
+
+    fun isPasswordEmpty(password: String): Boolean {
+        return password.isEmpty()
     }
 }
