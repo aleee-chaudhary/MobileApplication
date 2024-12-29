@@ -11,188 +11,173 @@
         android:id="@+id/signup_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:layout_marginStart="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/signup" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/get_started_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="MaterialTextViewStyle"
         android:text="@string/get_started"
-        android:layout_marginTop="175dp"
+        android:layout_marginTop="165dp"
         android:layout_marginStart="9dp"
         android:textSize="38sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/signup_image"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/create_account_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="MaterialTextViewStyle"
         android:text="@string/by_creating_a_free_account"
-        android:layout_marginTop="225dp"
-        android:layout_marginStart="10dp"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="2dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/signup_image"
+        app:layout_constraintTop_toBottomOf="@id/get_started_text" />
 
-    <EditText
-        android:id="@+id/full_name_field"
-        android:layout_width="350dp"
-        android:layout_height="48dp"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:layout_marginTop="280dp"
-        android:layout_marginStart="15dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/full_name_field_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:hint="@string/full_name"
-        android:background="@drawable/background_rectangle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/create_account_text" >
 
-    <EditText
-        android:id="@+id/email_field"
-        android:layout_width="350dp"
-        android:layout_height="48dp"
-        android:importantForAutofill="no"
-        android:inputType="textEmailAddress"
-        android:layout_marginTop="340dp"
-        android:layout_marginStart="15dp"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/full_name_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/user"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email_field_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:hint="@string/valid_email"
-        android:background="@drawable/background_rectangle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/full_name_field_layout" >
 
-    <EditText
-        android:id="@+id/phone_field"
-        android:layout_width="350dp"
-        android:layout_height="48dp"
-        android:importantForAutofill="no"
-        android:inputType="phone"
-        android:layout_marginTop="400dp"
-        android:layout_marginStart="15dp"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/mail"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phone_field_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:hint="@string/phone_number"
-        android:background="@drawable/background_rectangle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/email_field_layout" >
 
-    <EditText
-        android:id="@+id/password_field"
-        android:layout_width="350dp"
-        android:layout_height="48dp"
-        android:importantForAutofill="no"
-        android:inputType="textPassword"
-        android:layout_marginTop="460dp"
-        android:layout_marginStart="15dp"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phone_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/smartphone"
+            android:importantForAutofill="no"
+            android:inputType="phone" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_field_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:hint="@string/strong_password"
-        android:background="@drawable/background_rectangle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/phone_field_layout" >
 
-    <CheckBox
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/lock"
+            android:importantForAutofill="no"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.checkbox.MaterialCheckBox
         android:id="@+id/terms_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="520dp"
+        android:layout_marginTop="10dp"
         android:text="@string/terms_and_conditions"
-        android:textSize="11sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.396"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/password_field_layout" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/next_button"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/next"
         android:textSize="22sp"
-        android:layout_marginTop="600dp"
-        android:background="@drawable/round_button"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/terms_checkbox" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/already_member_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="670dp"
+        style="MaterialTextViewStyle"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="105dp"
         android:text="@string/already_a_member"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.365"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/next_button" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/login_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="180dp"
-        android:layout_marginTop="670dp"
+        style="MaterialTextViewStyle"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:focusable="true"
         android:text="@string/log_in"
         android:textColor="#3358ff"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.29"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/lock_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="325dp"
-        android:layout_marginTop="472dp"
-        android:src="@drawable/lock"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/mail_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="325dp"
-        android:layout_marginTop="352dp"
-        android:src="@drawable/mail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/user_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="325dp"
-        android:layout_marginTop="292dp"
-        android:src="@drawable/user"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/phone_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="325dp"
-        android:layout_marginTop="412dp"
-        android:src="@drawable/smartphone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/already_member_text"
+        app:layout_constraintTop_toBottomOf="@+id/next_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
